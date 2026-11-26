@@ -15,6 +15,8 @@ ENTRY = (
 
 
 def main() -> None:
+    # Competition gate: the entry line must be 1-180 characters.
+    assert 1 <= len(ENTRY) <= 180, f"entry line is {len(ENTRY)} chars, must be 1-180"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(ENTRY)
